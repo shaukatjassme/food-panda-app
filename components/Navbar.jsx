@@ -12,7 +12,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="text-gray-600 body-font shadow">
+    <header className="text-gray-600 body-font bg-white shadow fixed top-0 left-0 right-0 z-50">
       <div className="container mx-auto flex flex-wrap lg:p-5 p-3 items-center justify-between">
         {/* Signup button for mobile */}
         <div className="md:hidden flex items-center">
@@ -22,7 +22,7 @@ const Navbar = () => {
         </div>
 
         {/* Logo - Center on mobile, left on larger screens */}
-        <a className="flex title-font font-medium items-center text-gray-900 lg:mb-4 mb-0 md:mb-0 mx-auto md:mx-0">
+        <a className="flex title-font font-medium items-center text-gray-900 lg:mb-0 mb-0 md:mb-0 mx-auto md:mx-0">
           <img src="/images/food-logo.png" width={200} height={200} alt="Logo" />
        
         </a>
