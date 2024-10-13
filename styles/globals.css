@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import slick carousel css */
+/* @import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css'; */
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Okara';
+  src: url('/fonts/Okra Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Apercu';
+  src: url('/fonts/Apercu Regular.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Butler';
+  src: url('/fonts/Butler_Regular.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Agrandir';
+  src: url('/fonts/Agrandir-Regular.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* You can define different weights and styles similarly */
+
+body {
+  font-family: 'Agrandir', sans-serif;
+}
+
+
+/* custom-css */
+
+.signup-btn{
+  background-color: #e21b70;
+  color: white;
+}
+
+.hero-container{
+  width: 80%;
+  margin: auto;
+}
+@media screen and (max-width: 576px) {
+  .nav.flex.list-none{
+    display: block;
+  }
+  .w-50 {
+    width: 93%;
+    margin: auto;
+    padding-left: 0%;
+}
+.list-restaurebt{
+  height: 75vh !important;
+}
+  }
+@media screen and (max-width: 768px) {
+  .nav.flex.list-none{
+    text-align: center;
+  }
+  .w-50 {
+    width: 85%;
+}
+.list-restaurebt{
+  height: 72vh !important;
+}
+.hero-container{
+  height: 40vh !important;
+}
+}
+
+
+
+@layer utilities {
+    .text-balance {
+      text-wrap: balance;
+    }
+  }
