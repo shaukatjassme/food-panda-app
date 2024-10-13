@@ -33,7 +33,7 @@ const Index = () => {
       >
         {/* Left side: Input field with Find button */}
         <div className="left-side flex flex-col justify-center items-start p-8 lg:w-1/2 space-y-6">
-          <h1 className="lg:text-4xl text-2xl font-bold text-gray-800">
+          <h1 className="lg:text-4xl text-2xl mt-24 lg:mt-0 font-bold text-gray-800">
             It's the food and groceries you love, delivered
           </h1>
           <div className="flex flex-col md:flex-row bg-white p-2 rounded-md shadow-md w-full">
