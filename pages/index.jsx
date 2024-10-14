@@ -102,7 +102,7 @@ const Index = () => {
       <section className="list-country ">
         <div className="container mx-auto">
           {/* Grid with 4 columns */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 cursor-pointer">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-8 lg:p-0 cursor-pointer">
             {/* Dynamically generate the cards based on JSON data */}
             {places.map((place) => (
               <div key={place.id} className="relative group overflow-hidden">
