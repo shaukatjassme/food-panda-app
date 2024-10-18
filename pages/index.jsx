@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 // import optionsData from '../data/options.json';
 import { FaMapMarkedAlt } from 'react-icons/fa';
 import { FaCheck } from 'react-icons/fa';
+import Link from 'next/link';
 
 const Index = () => {
 
@@ -82,10 +83,10 @@ const Index = () => {
                 <h2 className="card-title text-2xl font-bold">List your restaurant or shop on foodpanda</h2>
                 <p className='text-lg mt-4'>Would you like millions of new customers to enjoy your amazing food and groceries? So would we!</p>
                 <p className='text-lg mt-4'>It's simple: we list your menu and product lists online, help you process orders, pick them up, and deliver them to hungry pandas – in a heartbeat!</p>
-                <p className='text-lg mt-4'>Interested? Let's start our partnership today!</p>
-                <button className="signup-btn mt-4 text-white py-3 px-6 rounded-md hover:bg-blue-600 transition duration-300 "> {/* Added ml-2 for spacing */}
+                <p className='text-lg mt-4 mb-4'>Interested? Let's start our partnership today!</p>
+                <Link href="/restaurants" className="signup-btn mt-4  text-white py-3 px-6 rounded-md  transition duration-300 "> {/* Added ml-2 for spacing */}
                   Get started
-                </button>
+                </Link>
               </div>
             </div>
           </div>

@@ -21,10 +21,14 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".", // Add baseUrl to ensure paths are resolved correctly
     "paths": {
       "@/*": [
-        "./pages/*"
-      ] // Adjusted to directly access pages directory
+        "./*"
+      ],
+      "@/components/*": [
+        "./components/*"
+      ]
     }
   },
   "include": [
@@ -33,7 +37,7 @@
     "**/*.tsx",
     "pages/**/*.js",
     ".next/types/**/*.ts"
-  ], // Including all files in pages
+  ],
   "exclude": [
     "node_modules"
   ]
