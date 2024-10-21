@@ -3,15 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons/faStar';
 import { FaSearch } from 'react-icons/fa';
 
-const Sidebar = ({ items = [], onFilterChange }) => {
-    const [searchTerm, setSearchTerm] = useState('');
+const Sidebar = ({  onFilterChange }) => {
+  
     const [selectedItem, setSelectedItem] = useState('');
     const [selectedValue, setSelectedValue] = useState('');
 
-    // Filter items based on search term
-    const filteredItems = items.filter((item) =>
-        item.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+
 
    
 
