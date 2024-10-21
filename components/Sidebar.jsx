@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons/faStar';
 import { FaSearch } from 'react-icons/fa';
 
-const Sidebar = ({ items = [] }) => {
+const Sidebar = ({ items = [], onFilterChange }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedItem, setSelectedItem] = useState('');
     const [selectedValue, setSelectedValue] = useState('');
@@ -13,21 +13,46 @@ const Sidebar = ({ items = [] }) => {
         item.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    const handleRadioChange = (e) => {
-        setSelectedValue(e.target.value);
-    };
+   
+
+   // Handle the radio button change for sorting options (Relevance, Fastest, Distance)
+   const handleRadioChange = (e) => {
+    const value = e.target.value;
+    setSelectedValue(value);
+
+    // Apply the correct filter based on the selected value
+    if (value === 'element2') {
+        onFilterChange('fastest');
+    } else if (value === 'element3') {
+        onFilterChange('distance'); // This will filter by 20 minutes or less distance
+    } else {
+        onFilterChange(''); // Reset the filter for "Relevance"
+    }
+};
+
+// Handle quick filter change
+const handleFilterChange = (filterType) => {
+    if (filterType === 'rating') {
+        onFilterChange('rating'); // Apply the rating filter
+    } else {
+        onFilterChange(''); // Reset filters
+    }
+};
+
 
     const handleRadioChange2 = (e) => {
         setSelectedItem(e.target.value);
     };
 
+
+
     return (
         <div
-            className="hidden md:block w-[250px] border-r border-gray-300 p-5 flex flex-col overflow-y-auto"
+            className="hidden md:block w-[220px] border-r border-gray-300 p-5 flex flex-col overflow-y-auto"
             style={{ maxHeight: '100vh' }}
         >
             <b className="text-xl mb-6">Filter</b>
-
+            <br />
             <span className="text-sm font-semibold">Sort by</span>
 
             {/* Scrollable content */}
@@ -40,6 +65,8 @@ const Sidebar = ({ items = [] }) => {
                             className="mr-3"
                             value="element1"
                             id="element1"
+                            onChange={handleRadioChange}
+                            defaultChecked
                         />
                         <label htmlFor="element1" className="font-semibold">
                             Relevance
@@ -52,6 +79,7 @@ const Sidebar = ({ items = [] }) => {
                             className="mr-3"
                             value="element2"
                             id="element2"
+                           
                         />
                         <label htmlFor="element2" className="font-semibold">
                             Fastest delivery
@@ -64,6 +92,8 @@ const Sidebar = ({ items = [] }) => {
                             className="mr-3"
                             value="element3"
                             id="element3"
+                            onChange={handleRadioChange}
+
                         />
                         <label htmlFor="element3" className="font-semibold">
                             Distance
@@ -74,11 +104,14 @@ const Sidebar = ({ items = [] }) => {
                 {/* Quick filters */}
                 <span className="text-sm font-semibold">Quick filters</span>
 
-                <button className="bg-white border border-gray-200 rounded-3xl px-2 py-2 hover:bg-gray-100 w-[60%] mt-2 font-semibold">
+                <button
+                    onClick={() => handleFilterChange('rating')}
+                    className="bg-white border border-gray-200 rounded-3xl px-2 py-2 hover:bg-gray-100 w-[60%] mt-2 font-semibold"
+                >
                     Rating 4+
                 </button>
 
-                <button className="bg-white border border-gray-200 rounded-3xl px-2 py-2 hover:bg-gray-100 w-full mt-2 font-semibold flex items-center mb-3">
+                <button  className="bg-white border border-gray-200 rounded-3xl px-2 py-2 hover:bg-gray-100 w-full mt-2 font-semibold flex items-center mb-3">
                     <FontAwesomeIcon icon={faStar} size="lg" className="mr-2" />
                     Top restaurant
                 </button>

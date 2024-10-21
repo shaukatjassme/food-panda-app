@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Sidebar from '../components/Sidebar';
 import { FaSearch } from 'react-icons/fa';
 import LogoCarousel from '../components/LogoCarousel';
@@ -9,14 +9,27 @@ import DeliveryCarousel from '../components/DeliveryCarousel';
 
 const restaurants = () => {
   const items = ['Item 1', 'Item 30', 'Item 3', 'Item 4', 'Item 5', 'Item 6', 'Item 5', 'Item 5', 'Item 5', 'Item 5', 'Item 5', 'Item 5', 'Item 5', 'Item 5', 'Item 5', 'Item 5', 'Item 5', 'Item 5', 'Item 5', 'Item 5', 'Item 5', 'Item 5', 'Item 5', 'Item 5', 'Item 5', 'Item 5', 'Item 5', 'Item 5', 'Item 5', 'Item 5', 'Item 5', 'Item 5', 'Item 5'];
+  
+    // State to track selected filter from Sidebar
+    const [selectedFilter, setSelectedFilter] = useState('');
+    const [buttonFilter, setButtonFilter] = useState('');
+
+    // Function to update the filter based on selection
+    const handleFilterChange = (filter,newFilter) => {
+      setSelectedFilter(filter);
+      setButtonFilter(newFilter);
+    };
+
+
+
   return (
     <>
 
       <div style={{ display: 'flex' }} className='bg-grey-900'>
         {/* Ensure items are passed as a prop */}
-        <Sidebar items={items} className='' />
+        <Sidebar items={items} className='' onFilterChange={handleFilterChange} />
         {/* Main content area */}
-        <div style={{ marginLeft: '25px', padding: '20px', flexGrow: 1 }}>
+        <div style={{ marginLeft: '0px', padding: '10px', flexGrow: 1 }}>
 
 
           {/* Main-div */}
@@ -24,7 +37,7 @@ const restaurants = () => {
 
           <div className='bg-white  '>
 
-            <div className="relative w-full mt-2">
+            <div className="relative lg:w-[800px] m-auto mt-4 lg:mt-2">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <FaSearch className="text-black" />
               </div>
@@ -38,9 +51,10 @@ const restaurants = () => {
 
            <div className='container overflow-hidden mt-5'>
            <LogoCarousel />
+           <DeliveryCarousel filter={selectedFilter} buttonFilter={buttonFilter} />
            <CuisinesCarousel />
            <SummerCarousel />
-           <DeliveryCarousel />
+          
            </div>
           </div>
         

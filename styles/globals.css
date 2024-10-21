@@ -78,7 +78,19 @@ body {
 .slick-prev:before, .slick-next:before{
   color:black !important;
 }
-
+.slick-prev {
+  left: -3px;
+  z-index: 99;
+  font-size: 30px !important;
+}
+.slick-next {
+  right: 27px;
+}
+.slick-prev:before, .slick-next:before {
+  font-family: 'slick';
+  font-size: 50px;
+  font-family: auto;
+}
 
 @media screen and (max-width: 476px) {
   .nav.flex.list-none{

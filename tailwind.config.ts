@@ -87,13 +87,14 @@ const config: Config = {
   			'150': '150px'
   		},
   		fontSize: {
-  			'custom-size-mobile': '14px'
+  			'custom-size-mobile': '9px'
   		},
   		maxWidth: {
   			'40rem': '40rem',
   			'50rem': '50rem',
 			'56rem': '56rem',
   			'60rem': '60rem',
+			'69rem': '69rem',
   			'80rem': '80rem'
   		},
   		borderRadius: {

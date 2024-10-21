@@ -1,15 +1,8 @@
 import Image from 'next/image';
 import React from 'react';
 import Slider from 'react-slick';
+import { logos } from '@/data/logos';  // Make sure this path is correct
 
-// Logos array with paths to images
-const logos = [
-    '/images/first-slide-pic.webp',
-    '/images/2nd-slide-pic.webp',
-    '/images/3rd-slide-pic.webp',
-    '/images/4th-slide-pic.webp',
-    '/images/5th-slide-pic.webp',
-];
 
 // Slick slider settings
 const settings = {
@@ -46,7 +39,7 @@ const LogoCarousel = () => {
     return (
         <>   
         <h1 className='text-3xl font-bold'>Your daily deals</h1>
-        <section aria-label="Logo Carousel" className="logo-carousel mx-auto w-full max-w-60rem">
+        <section aria-label="Logo Carousel" className="logo-carousel mx-auto w-full w-full max-w-[22rem] md:max-w-[32rem] lg:max-w-[69rem] xl:max-w-[60rem]">
             <Slider {...settings}>
                 {logos.map((logo, index) => (
                     <article key={index} className="p-4">
